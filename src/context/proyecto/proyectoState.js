@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 import ProyectoContext from "./proyectoContext";
 import proyectoReducer from "./proyectoReducer";
+import { v4 as uuidv4 } from "uuid";
 import {
   FORMULARIO_PROYECTO,
   GET_PROYECTOS,
@@ -46,8 +47,7 @@ const ProyectoState = (props) => {
 
   //Agregar proyecto
   const agregarProyecto = (proyecto) => {
-    //proyecto.id = uuid.v4()
-    proyecto.id = 6;
+    proyecto.id = uuidv4();
     dispatch({ type: AGREGAR_PROYECTO, payload: proyecto });
   };
 
